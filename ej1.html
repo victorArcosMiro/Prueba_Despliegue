@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // Creo una funcion para comprobar si el primer número es mayor, menor o igual al segundo.
+    function comprobarPrimeroMayor(n1, n2) {
+      if (n1 > n2) {
+        document.write("El primer número (" + n1 + ") es mayor que el segundo (" + n2 + ").");
+      } else if (n1 < n2) {
+        document.write("El primer número (" + n1 + ") es menor que el segundo (" + n2 + ").");
+      } else {
+        document.write("Los números son iguales.");
+      }
+    }
+
+    // Creo una funcion para comprobar si el segundo número es positivo.
+    function comprobarSegundoPositivo(n2) {
+      if (n2 > 0) {
+        document.write("El segundo número es positivo.");
+      } else {
+        document.write("El segundo numero no es positivo.");
+      }
+    }
+
+    // Creo una funcion para comprobar si el primer número es negativo, diferente de cero o igual a cero.
+    function comprobarPrimeroNegativoCero(n1) {
+      if (n1 < 0) {
+        document.write("El primer número es negativo.");
+      } else if (n1 != 0) {
+        document.write("El numero es diferente de cero.");
+      } else {
+        document.write("El numero es 0 o mayor que 0.");
+      }
+    }
+
+    // Creo una funcion que incrementa el primer número y compara con el segundo.
+    function cuartaComprobacion(n1, n2) {
+      n1++;
+      if (n1 > n2) {
+        document.write("El primer numero es mayor que el segundo");
+      } else if (n1 == n2) {
+        document.write("Los numeros son iguales.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <script>
+    // Solicito dos números al usuario mediante prompts.
+    var n1 = prompt("Introduce el primer numero: ");
+    var n2 = prompt("Introduce el segundo numero: ");
+
+    // Realizo diversas comprobaciones utilizando las funciones de usuario que he creado.
+    document.write("Primera comprobacion: ");
+    comprobarPrimeroMayor(n1, n2);
+    document.write("<br>");
+
+    document.write("Segunda comprobacion: ");
+    comprobarSegundoPositivo(n2);
+    document.write("<br>");
+
+    document.write("Tercera comprobacion: ");
+    comprobarPrimeroNegativoCero(n1);
+    document.write("<br>");
+
+    document.write("Cuarta comprobacion: ");
+    cuartaComprobacion(n1, n2);
+  </script>
+</body>
+</html>
