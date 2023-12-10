@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación de DNI</title>
+</head>
+<body>
+  <script>
+    // MODIFICACION DEL ARCHIVO "EJ2.HTML" DESDE RAMA FEATURE
+ // Defino el conjunto de letras correspondientes a los números de DNI en mayúsculas y minúsculas.
+ const letrasArray = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+    const letrasArrayMinusculas = ["t", "r", "w", "a", "g", "m", "y", "f", "p", "d", "x", "b", "n", "j", "z", "s", "q", "v", "h", "l", "c", "k", "e"];
+    //Funcion que comprueba si el dni es correcto
+    function comprobarDni(dni){
+
+      // Convierto la cadena 'dni' en un array de caracteres, elimino el último elemento y vuelvo a convertirlo en una cadena.
+      var numerosArray = Array.from(dni).slice(0, -1);
+      var numeros = numerosArray.join('');
+
+      // Convierto la variable 'numeros' a un número entero utilizando 'parseInt' y lo almaceno en 'dniInt'.
+      var dniInt = parseInt(numeros);
+
+      // Verifico si la letra del DNI introducido coincide con alguna de las posiciones de los arrays en mayúsculas o minúsculas.
+      if (letrasArray[(dniInt % 23)] == dni[dni.length - 1] || letrasArrayMinusculas[(dniInt % 23)] == dni[dni.length - 1]) {
+        alert("El DNI es correcto"); // Mensaje si el DNI es correcto.
+      } else {
+        return false; // Devuelve false
+      }
+    }
+    //Funcion para pedir al usuario el dni por teclado
+    function pedirDni(){
+      return prompt("Introduce tu DNI");
+    }
+    var dni;
+    // Solicito al usuario que ingrese su número de DNI para almacenarlo en la variable 'dni'.
+    dni = pedirDni();
+    // Mientras la funcion comprobarDni no devuelva 'true', osea que sea correcto, se seguira ejecutando la funcion para pedir el dni.
+    while(comprobarDni(dni)==false){
+     dni = pedirDni();
+    }
+  </script>
+</body>
+</html>
